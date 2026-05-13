@@ -1,0 +1,20 @@
+specification {
+  element actor {
+    style {
+      shape person
+    }
+  }
+  element system
+  element service
+  element component
+  element database {
+    style {
+      shape storage
+    }
+  }
+
+  tag external
+  tag deprecated
+  tag data
+  tag auth
+}

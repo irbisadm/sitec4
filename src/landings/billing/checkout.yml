@@ -1,0 +1,5 @@
+title: Checkout
+description: Order placement flow and related components.
+sections:
+  - title: Related views
+    views: [api]

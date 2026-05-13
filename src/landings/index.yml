@@ -1,0 +1,7 @@
+title: Project architecture
+description: Full map of views — context, system composition, internal components.
+sections:
+  - title: All diagrams
+    views: [index, app]
+  - title: Subsystems
+    landings: [billing, billing/checkout, shop/inventory/warehouse/zones/north]

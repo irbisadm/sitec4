@@ -1,0 +1,34 @@
+{
+  "name": "@irbisadm/sitec4",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Project architecture diagrams in LikeC4 DSL + Next.js wrapper",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "schemas:dev": "likec4 dev ./src",
+    "schemas:build": "likec4 build -o ./dist ./src",
+    "schemas:preview": "likec4 preview -o ./dist",
+    "schemas:validate": "likec4 validate ./src",
+    "schemas:export:png": "likec4 export png -o ./dist/png ./src",
+    "gen:model": "likec4 gen model --use-core-package -o ./apps/web/lib/likec4-model.ts ./src",
+    "gen:landings": "node scripts/gen-landings.mjs",
+    "gen": "npm run gen:model && npm run gen:landings",
+    "watch:gen:model": "chokidar 'src/**/*.c4' 'src/**/*.likec4' -d 200 --initial --polling -c 'npm run gen:model'",
+    "watch:gen:landings": "chokidar 'src/landings/**/*.yml' 'src/landings/**/*.yaml' -d 200 --initial --polling -c 'npm run gen:landings'",
+    "dev": "concurrently --kill-others-on-fail --names 'model,land,web' --prefix-colors 'yellow,magenta,cyan' 'npm:watch:gen:model' 'npm:watch:gen:landings' 'npm:web:dev'",
+    "web:dev": "npm run dev -w @irbisadm/sitec4-web",
+    "web:build": "npm run build -w @irbisadm/sitec4-web",
+    "web:typecheck": "npm run typecheck -w @irbisadm/sitec4-web"
+  },
+  "devDependencies": {
+    "chokidar-cli": "^3.0.0",
+    "concurrently": "^9.2.1",
+    "likec4": "~1.47.0",
+    "yaml": "^2.9.0"
+  },
+  "engines": {
+    "node": ">=20.19.0 <21.0.0"
+  }
+}

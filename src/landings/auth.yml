@@ -1,0 +1,5 @@
+title: Authentication
+description: Everything related to user authentication and authorization.
+sections:
+  - title: Related views
+    views: [api]

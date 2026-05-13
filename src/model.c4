@@ -1,0 +1,66 @@
+model {
+  customer = actor 'User' {
+    description 'Client using the web application'
+  }
+
+  app = system 'Project' {
+    description 'Main system of the project'
+
+    web = service 'Web App' {
+      description 'Frontend application running in the browser'
+      style {
+        shape browser
+      }
+    }
+
+    api = service 'Backend API' {
+      description 'REST API service'
+
+      auth = component 'Auth' {
+        #auth
+        description '''
+          User authentication and authorization.
+
+          Responsibilities:
+
+          - validating JWT tokens;
+          - issuing tokens on login;
+          - checking resource permissions.
+        '''
+        link /l/auth 'Authentication landing'
+      }
+
+      orders = component 'Orders' {
+        #data
+        description 'Business logic for orders'
+        link /l/data 'Data landing'
+      }
+    }
+
+    db = database 'PostgreSQL' {
+      #data
+      description '''
+        The **primary database** of the project.
+
+        Stores:
+
+        - orders (see the `Orders` component);
+        - user sessions;
+        - audit log.
+
+        Hosted in a managed service. See the [Data landing](/l/data).
+      '''
+      link /l/data 'Data landing'
+    }
+
+    web -> api 'HTTP/JSON'
+    api -> db 'SQL' {
+      link /l/data 'Data landing'
+    }
+    orders -> auth 'validates token' {
+      link /l/auth 'Authentication landing'
+    }
+  }
+
+  customer -> web 'opens in the browser'
+}

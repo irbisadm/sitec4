@@ -1,0 +1,6 @@
+title: Product catalog
+description: |
+  Storefront with **products**: search, filters, product page.
+sections:
+  - title: Related views
+    views: [app]

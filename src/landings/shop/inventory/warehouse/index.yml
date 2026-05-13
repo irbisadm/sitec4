@@ -1,0 +1,8 @@
+title: Warehouse management
+description: |
+  **Warehouse management** subsystem: stock, audits, transfers.
+
+  Split by physical zones.
+sections:
+  - title: Zones
+    landings: [shop/inventory/warehouse/zones/north]

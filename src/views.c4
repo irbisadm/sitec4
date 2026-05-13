@@ -1,0 +1,31 @@
+views {
+  view index {
+    title 'Context: Project'
+    description 'System overview and its users'
+
+    include *
+  }
+
+  view app of app {
+    title 'System composition'
+    description 'Services and storage inside the system'
+
+    include *
+  }
+
+  view api of app.api {
+    title 'Backend API internals'
+    description '''
+      Internal structure of the **Backend API**.
+
+      Consists of:
+
+      - `Auth` — authentication and authorization;
+      - `Orders` — order business logic.
+
+      Used by the external [Web App](/v/index) over HTTP/JSON.
+    '''
+
+    include *
+  }
+}

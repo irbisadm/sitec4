@@ -1,0 +1,11 @@
+title: North warehouse
+description: |
+  Main warehouse complex in the north.
+
+  Includes:
+  - loading docks;
+  - cold storage chambers;
+  - sorting conveyor.
+sections:
+  - title: Related views
+    views: [app]

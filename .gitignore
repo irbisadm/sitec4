@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.next/
+.likec4/
+.cache/
+*.log
+.DS_Store
+
+# TypeScript / Next.js generated
+*.tsbuildinfo
+next-env.d.ts
+
+# Generated artifacts — recreated by `npm run gen`
+apps/web/lib/likec4-model.ts
+apps/web/lib/landings-data.generated.json

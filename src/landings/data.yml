@@ -1,0 +1,12 @@
+title: Data
+description: |
+  Everything related to **data storage and processing**.
+
+  Includes:
+
+  - business logic in `Orders`,
+  - relational storage `PostgreSQL`,
+  - relationships between them (see [Backend API](/v/api)).
+sections:
+  - title: Related views
+    views: [app, api]

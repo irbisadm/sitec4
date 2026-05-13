@@ -1,0 +1,8 @@
+title: Billing — overview
+description: |
+  The **billing** subsystem: subscriptions, invoices, payment methods.
+
+  All billing-related landings live here.
+sections:
+  - title: Related views
+    views: [api]
