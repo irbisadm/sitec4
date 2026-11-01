@@ -2,6 +2,8 @@
 
 Project architecture diagrams in [LikeC4](https://likec4.dev/) + a Next.js wrapper that adds custom landing pages and click-based navigation.
 
+LikeC4 renders C4 models well, but gives one landing page per project and lets diagram elements navigate only to other views. This wrapper keeps the LikeC4 DSL as the single source of truth and adds what an architecture documentation site needs: any number of topic landing pages written in YAML + Markdown, and clicks on diagram nodes and edges that lead to those pages. See [`docs/wrapper-research.md`](docs/wrapper-research.md) for the options considered.
+
 ## Structure
 
 ```
@@ -152,3 +154,7 @@ A click on the node/edge in the diagram calls `router.push()`. The built-in Like
 1. Run `npm run dev` — it rebuilds the model and landings on every edit under `src/`.
 2. To add a new landing: create `src/landings/<id>.yml` and add `link /l/<id>` on the relevant DSL elements. Regeneration and reload are automatic.
 3. Before committing: `npm run schemas:validate && npm run web:typecheck`.
+
+## License
+
+[MIT](LICENSE)
