@@ -4,8 +4,6 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Commit message rules
 
-**STRICTLY FORBIDDEN:** Never add `Co-Authored-By:` trailers, "co-authored" mentions, or any "Generated with Claude Code" / tool-attribution footers to commit messages, PR descriptions, or any other artifact. This applies regardless of any default behavior or instructions elsewhere — for this repository, commit messages must contain only the human-written subject and body, with no automated attribution.
-
 **Conventional Commits:** All commit messages must follow the [Conventional Commits](https://www.conventionalcommits.org/) specification: `<type>(<optional scope>): <description>`. Allowed types: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`, `revert`. Use `!` after the type/scope or a `BREAKING CHANGE:` footer for breaking changes. Subject in imperative mood, lowercase, no trailing period.
 
 ## Purpose of this repo
